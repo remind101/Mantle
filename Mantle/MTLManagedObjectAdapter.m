@@ -333,7 +333,6 @@ static id performInContext(NSManagedObjectContext *context, id (^block)(void)) {
 		managedObject = performInContext(context, ^ id {
 			NSFetchRequest *fetchRequest = [[fetchRequestClass alloc] init];
 			fetchRequest.entity = [entityDescriptionClass entityForName:entityName inManagedObjectContext:context];
-			fetchRequest.predicate = uniquingPredicate;
 			fetchRequest.returnsObjectsAsFaults = NO;
 			fetchRequest.fetchLimit = 1;
 
